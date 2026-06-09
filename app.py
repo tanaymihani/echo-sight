@@ -3,6 +3,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from dotenv import load_dotenv
+from prompts import SYSTEM_PROMPT, USER_PROMPT_TEMPLATE
 import pyttsx3
 import time
 
@@ -24,47 +25,43 @@ def load_vector_db():
     return db
 
 
-def ask_question(db, question):
-    q_lower = question.lower()
-
-    # 1. Load many chunks once
-    docs = db.similarity_search(question, k=8)
-
-    # 2. Group by section
+def build_context(docs):
+    """Group retrieved chunks by section and format into a labelled context block."""
     section_chunks = {}
     for doc in docs:
         section = doc.metadata.get("section", "Unknown")
         section_chunks.setdefault(section, []).append(doc.page_content)
 
-    # 3. If user explicitly names a section → drill down
+    context_parts = []
     for section, chunks in section_chunks.items():
-        if section.lower() in q_lower:
-            content = "\n".join(chunks[:3])
-            return (
-                f"Here is a brief summary of the section '{section}'.\n\n"
-                f"{content[:600]}\n\n"
-                "Would you like more details or another section?"
-            )
+        context_parts.append(f"--- {section} ---")
+        for chunk in chunks:
+            context_parts.append(chunk.strip())
+        context_parts.append("")  # blank line between sections
 
-    # 4. Otherwise → answer based on retrieved content
-    seen = set()
-    deduped = []
+    return "\n".join(context_parts)
 
-    for chunks in section_chunks.values():
-        for chunk in chunks[:2]:
-            snippet = chunk.strip()
-            if snippet not in seen:
-                seen.add(snippet)
-                deduped.append(snippet)
 
-    combined_context = "\n".join(deduped)
-    response = (
-        "Here is a concise answer based on the relevant parts of the document:\n\n"
-        f"{combined_context[:700]}\n\n"
-        "Would you like me to narrow this down to a specific section?"
-    )
+def ask_question(db, question):
+    # 1. Retrieve relevant chunks
+    docs = db.similarity_search(question, k=8)
 
-    return response
+    # 2. Build section-grouped context string
+    context = build_context(docs)
+
+    # 3. Synthesize an answer via LLM
+    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.2)
+
+    messages = [
+        SystemMessage(content=SYSTEM_PROMPT),
+        HumanMessage(content=USER_PROMPT_TEMPLATE.format(
+            context=context,
+            question=question
+        ))
+    ]
+
+    response = llm.invoke(messages)
+    return response.content
 
 
 def speak(text):
@@ -89,6 +86,3 @@ if __name__ == "__main__":
     print(answer)
     print(f"\n[Latency: {latency:.2f} seconds]")
     speak(answer)
-
-
-
