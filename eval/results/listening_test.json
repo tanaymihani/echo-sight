@@ -1,0 +1,23 @@
+{
+  "split": "test",
+  "questions": 77,
+  "document_words": 11525,
+  "Linear listening_180": {
+    "median_s": 1824.3333333333333,
+    "p90_s": 3109.866666666667
+  },
+  "Linear listening_360": {
+    "median_s": 912.1666666666666,
+    "p90_s": 1554.9333333333334
+  },
+  "Linear listening_median_words": 5473,
+  "Heading navigation_180": {
+    "median_s": 100.33333333333334,
+    "p90_s": 197.3333333333334
+  },
+  "Heading navigation_360": {
+    "median_s": 50.16666666666667,
+    "p90_s": 98.6666666666667
+  },
+  "Heading navigation_median_words": 301
+}
