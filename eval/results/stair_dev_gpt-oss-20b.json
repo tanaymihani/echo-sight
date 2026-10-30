@@ -1,0 +1,434 @@
+{
+  "split": "dev",
+  "router": "groq/openai/gpt-oss-20b",
+  "invalid_outputs": 0,
+  "empty_route_answerable": 0.012658227848101266,
+  "empty_route_out_of_scope": 0.6,
+  "routing_latency_p50_s": 0.583998457999769,
+  "routing_latency_p95_s": 1.7452275040519438,
+  "sections": [
+    {
+      "method": "BM25",
+      "R@1": 0.810126582278481,
+      "R@3": 0.9240506329113924,
+      "R@1_subtree": 0.810126582278481
+    },
+    {
+      "method": "dense (bge-base)",
+      "R@1": 0.7468354430379747,
+      "R@3": 0.8860759493670886,
+      "R@1_subtree": 0.759493670886076
+    },
+    {
+      "method": "hybrid (RRF)",
+      "R@1": 0.8227848101265823,
+      "R@3": 0.9493670886075949,
+      "R@1_subtree": 0.8481012658227848
+    },
+    {
+      "method": "v2 final (hybrid + reranker)",
+      "R@1": 0.8481012658227848,
+      "R@3": 0.9746835443037974,
+      "R@1_subtree": 0.8607594936708861
+    },
+    {
+      "method": "STAIR ToC router (groq/openai/gpt-oss-20b, zero-shot)",
+      "R@1": 0.5949367088607594,
+      "R@3": 0.7468354430379747,
+      "R@1_subtree": 0.6329113924050633
+    }
+  ],
+  "chunks": [
+    {
+      "config": "v2 (no ToC routing)",
+      "hit@1": 0.7721518987341772,
+      "hit@3": 0.8860759493670886,
+      "hit@5": 0.9240506329113924,
+      "mrr": 0.8415963431786218,
+      "recall@4": 0.9113924050632911,
+      "p50_ms": 234.02825000084704
+    },
+    {
+      "config": "v2 + STAIR, fusion=candidates",
+      "hit@1": 0.7721518987341772,
+      "hit@3": 0.8860759493670886,
+      "hit@5": 0.9240506329113924,
+      "mrr": 0.8417721518987342,
+      "recall@4": 0.9113924050632911,
+      "p50_ms": 248.1756659981329
+    },
+    {
+      "config": "v2 + STAIR, fusion=final",
+      "hit@1": 0.6329113924050633,
+      "hit@3": 0.810126582278481,
+      "hit@5": 0.8860759493670886,
+      "mrr": 0.7399387181032753,
+      "recall@4": 0.8544303797468354,
+      "p50_ms": 241.6635830013547
+    },
+    {
+      "config": "v2 + STAIR, fusion=restrict",
+      "hit@1": 0.620253164556962,
+      "hit@3": 0.6962025316455697,
+      "hit@5": 0.7341772151898734,
+      "mrr": 0.6665611814345992,
+      "recall@4": 0.7151898734177216,
+      "p50_ms": 94.48570899985498
+    }
+  ],
+  "routes": {
+    "a002": [
+      "THE ROLE OF THE OFFICE OF STUDENT CONDUCT AND CONFLICT RESOLUTION",
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION",
+      "FILING A REPORT"
+    ],
+    "a010": [
+      "BULLYING"
+    ],
+    "a014": [
+      "Alcohol",
+      "ALCOHOL, MARIJUANA, OTHER DRUGS, AND MEDICAL AMNESTY",
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL"
+    ],
+    "a016": [
+      "FAILURE TO PRODUCE NORTHEASTERN STUDENT IDENTIFICATION",
+      "FAILURE TO COMPLY"
+    ],
+    "a018": [
+      "GAMBLING"
+    ],
+    "a019": [
+      "HAZING"
+    ],
+    "a020": [
+      "FAILURE TO PRODUCE NORTHEASTERN STUDENT IDENTIFICATION",
+      "UNAUTHORIZED USE OF UNIVERSITY IDENTIFICATION MARKS",
+      "INAPPROPRIATE IDENTIFICATION"
+    ],
+    "a021": [
+      "SMOKING"
+    ],
+    "a022": [
+      "RETALIATION"
+    ],
+    "a024": [
+      "VIOLATION OF PROFESSIONAL CONDUCT IN DEGREE PROGRAM"
+    ],
+    "a025": [
+      "VIOLATION OF UNIVERSITY POLICIES",
+      "UNIVERSITY GUEST POLICY"
+    ],
+    "a029": [
+      "DESCRIPTION OF ADMINISTRATIVE HEARINGS",
+      "DESCRIPTION OF STUDENT CONDUCT BOARD HEARINGS",
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION"
+    ],
+    "a030": [
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION",
+      "Maintenance of Student Conduct Records",
+      "Interpretation and Application"
+    ],
+    "a034": [
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION",
+      "HEARING ADVISORS"
+    ],
+    "a036": [
+      "Failure to Appear",
+      "The Hearing",
+      "Notification"
+    ],
+    "a038": [
+      "Notification",
+      "The Hearing",
+      "Failure to Appear"
+    ],
+    "a042": [
+      "STUDENT EXPECTATIONS",
+      "FAILURE TO COMPLY"
+    ],
+    "a044": [
+      "Presentation of Information",
+      "The Hearing"
+    ],
+    "a045": [
+      "The Decision Letter"
+    ],
+    "a046": [
+      "THE ROLE OF THE OFFICE OF STUDENT CONDUCT AND CONFLICT RESOLUTION",
+      "Decision-Making Authority"
+    ],
+    "a050": [
+      "The Hearing",
+      "Failure to Appear",
+      "The Decision Letter"
+    ],
+    "a051": [
+      "THE ROLE OF THE OFFICE OF STUDENT CONDUCT AND CONFLICT RESOLUTION",
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION"
+    ],
+    "a053": [
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION",
+      "DESCRIPTION OF ADMINISTRATIVE HEARINGS",
+      "DISORDERLY CONDUCT"
+    ],
+    "a057": [
+      "The Hearing",
+      "Preparing for the Student Conduct Board Hearing",
+      "Information Regarding the Student Conduct Board Hearing"
+    ],
+    "a059": [],
+    "a061": [
+      "The Hearing",
+      "Failure to Appear",
+      "The Decision Letter"
+    ],
+    "a062": [
+      "DESCRIPTION OF ADMINISTRATIVE HEARINGS",
+      "The Hearing",
+      "The Decision Letter"
+    ],
+    "a063": [
+      "The Decision Letter",
+      "The Decision Letter"
+    ],
+    "a065": [
+      "The PreHearing",
+      "Preparing for the Student Conduct Board Hearing"
+    ],
+    "a066": [
+      "Preparing for the Student Conduct Board Hearing",
+      "Information Regarding the Student Conduct Board Hearing",
+      "Presentation of Information"
+    ],
+    "a067": [
+      "The PreHearing"
+    ],
+    "a068": [
+      "Procedures for Student Appeals",
+      "Sanctions",
+      "ACADEMIC INTEGRITY"
+    ],
+    "a069": [
+      "Sanctions",
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION",
+      "Procedures for Student Appeals"
+    ],
+    "a070": [
+      "Preparing for the Student Conduct Board Hearing"
+    ],
+    "a072": [
+      "Information Regarding the Student Conduct Board Hearing",
+      "Presentation of Information"
+    ],
+    "a075": [
+      "Preparing for the Student Conduct Board Hearing",
+      "Information Regarding the Student Conduct Board Hearing",
+      "Presentation of Information"
+    ],
+    "a076": [
+      "Procedures for Student Appeals"
+    ],
+    "a079": [
+      "Procedures for Student Appeals"
+    ],
+    "a080": [
+      "Procedures for Student Appeals",
+      "The Decision Letter",
+      "The Decision Letter"
+    ],
+    "a085": [
+      "ALCOHOL, MARIJUANA, OTHER DRUGS, AND MEDICAL AMNESTY",
+      "Alcohol",
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL"
+    ],
+    "a086": [
+      "ALCOHOL, MARIJUANA, OTHER DRUGS, AND MEDICAL AMNESTY",
+      "Alcohol",
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL"
+    ],
+    "a088": [
+      "Drugs",
+      "Medical Amnesty"
+    ],
+    "a091": [
+      "Medical Amnesty",
+      "Alcohol"
+    ],
+    "a095": [
+      "DISORDERLY CONDUCT",
+      "VANDALISM"
+    ],
+    "a096": [
+      "BREAKING AND ENTERING"
+    ],
+    "a099": [
+      "FAILURE TO PRODUCE NORTHEASTERN STUDENT IDENTIFICATION",
+      "FAILURE TO COMPLY",
+      "FIRE SAFETY"
+    ],
+    "a100": [
+      "FIRE SAFETY"
+    ],
+    "a101": [
+      "FIRE SAFETY"
+    ],
+    "a104": [
+      "HAZING"
+    ],
+    "a105": [
+      "HAZING"
+    ],
+    "a106": [
+      "BULLYING",
+      "HARASSMENT",
+      "HAZING"
+    ],
+    "a107": [
+      "FAILURE TO PRODUCE NORTHEASTERN STUDENT IDENTIFICATION",
+      "UNAUTHORIZED USE OF UNIVERSITY IDENTIFICATION MARKS"
+    ],
+    "a109": [
+      "UNAUTHORIZED ACCESS OR USE",
+      "UNAUTHORIZED USE/POSSESSION OF OTHER\u2019S PROPERTY"
+    ],
+    "a114": [
+      "THEFT",
+      "UNAUTHORIZED ACCESS OR USE",
+      "UNAUTHORIZED USE/POSSESSION OF OTHER\u2019S PROPERTY"
+    ],
+    "a115": [
+      "UNAUTHORIZED ACCESS OR USE"
+    ],
+    "a117": [
+      "VIOLATION OF CENTER FOR STUDENT INVOLVEMENT GUIDELINES",
+      "VIOLATION OF CENTER FOR SPIRITUALITY, DIALOGUE, AND SERVICE GUIDELINES",
+      "VIOLATION OF UNIVERSITY POLICIES"
+    ],
+    "a118": [
+      "VIOLATION OF LAW",
+      "VIOLATION OF UNIVERSITY POLICIES",
+      "VIOLATION OF PROFESSIONAL CONDUCT IN DEGREE PROGRAM"
+    ],
+    "a119": [
+      "Sanctions",
+      "Standards of Conduct",
+      "The Decision Letter"
+    ],
+    "a120": [
+      "Sanctions"
+    ],
+    "a121": [
+      "Sanctions",
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL",
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF MARIJUANA"
+    ],
+    "a123": [
+      "Other Interim Action",
+      "Interim Suspension",
+      "No Contact Order"
+    ],
+    "a126": [
+      "VIOLATION OF GUIDE TO RESIDENCE HALL LIVING",
+      "Sanctions",
+      "VIOLATION OF UNIVERSITY POLICIES"
+    ],
+    "a127": [
+      "Sanctions",
+      "VIOLATION OF UNIVERSITY POLICIES"
+    ],
+    "a128": [
+      "Sanctions",
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL",
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF MARIJUANA"
+    ],
+    "a130": [
+      "Sanctions",
+      "The Decision Letter",
+      "The Decision Letter"
+    ],
+    "a133": [
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF MARIJUANA"
+    ],
+    "a136": [
+      "Other Interim Action"
+    ],
+    "a137": [
+      "Interim Suspension",
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION",
+      "The Hearing"
+    ],
+    "a138": [
+      "VIOLATION OF GUIDE TO RESIDENCE HALL LIVING",
+      "VIOLATION OF UNIVERSITY POLICIES",
+      "Failure to Appear"
+    ],
+    "a139": [
+      "No Contact Order"
+    ],
+    "a141": [
+      "Temporary Measures Administrative Directive"
+    ],
+    "a143": [
+      "Sanctions",
+      "Maintenance of Student Conduct Records"
+    ],
+    "a144": [
+      "Procedures for Student Appeals",
+      "Maintenance of Student Conduct Records"
+    ],
+    "a145": [
+      "Decision-Making Authority",
+      "Interpretation and Application"
+    ],
+    "a148": [
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL",
+      "Parent/Guardian Notification",
+      "Interim Suspension"
+    ],
+    "a150": [
+      "Sanctions",
+      "VIOLATION OF UNIVERSITY POLICIES"
+    ],
+    "a153": [
+      "Applicability of the Code On and Off Campus/Jurisdiction of the Code",
+      "NOISE",
+      "DISORDERLY CONDUCT"
+    ],
+    "a155": [
+      "THEFT",
+      "UNAUTHORIZED USE/POSSESSION OF OTHER\u2019S PROPERTY"
+    ],
+    "a156": [
+      "Interim Suspension",
+      "Other Interim Action",
+      "Parent/Guardian Notification"
+    ],
+    "o002": [],
+    "o004": [],
+    "o005": [
+      "STUDENT EXPECTATIONS"
+    ],
+    "o007": [
+      "THE ROLE OF THE OFFICE OF STUDENT CONDUCT AND CONFLICT RESOLUTION"
+    ],
+    "o008": [
+      "VIOLATION OF GUIDE TO RESIDENCE HALL LIVING"
+    ],
+    "o012": [
+      "Procedures for Student Appeals"
+    ],
+    "o014": [],
+    "o015": [
+      "VIOLATION OF GUIDE TO RESIDENCE HALL LIVING"
+    ],
+    "o017": [],
+    "o018": [],
+    "o020": [],
+    "o023": [],
+    "o025": [],
+    "o026": [],
+    "o027": [
+      "FILING A REPORT"
+    ]
+  }
+}

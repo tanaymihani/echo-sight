@@ -1,0 +1,23 @@
+{
+  "split": "dev",
+  "questions": 79,
+  "document_words": 11525,
+  "Linear listening_180": {
+    "median_s": 2412.3333333333335,
+    "p90_s": 3501.333333333333
+  },
+  "Linear listening_360": {
+    "median_s": 1206.1666666666667,
+    "p90_s": 1750.6666666666665
+  },
+  "Linear listening_median_words": 7237,
+  "Heading navigation_180": {
+    "median_s": 129.66666666666666,
+    "p90_s": 243.0
+  },
+  "Heading navigation_360": {
+    "median_s": 64.83333333333333,
+    "p90_s": 121.5
+  },
+  "Heading navigation_median_words": 389
+}

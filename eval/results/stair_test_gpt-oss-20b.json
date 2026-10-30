@@ -1,0 +1,407 @@
+{
+  "split": "test",
+  "router": "groq/openai/gpt-oss-20b",
+  "invalid_outputs": 0,
+  "empty_route_answerable": 0.025974025974025976,
+  "empty_route_out_of_scope": 0.6,
+  "routing_latency_p50_s": 0.6366305834999366,
+  "routing_latency_p95_s": 1.25224317064949,
+  "sections": [
+    {
+      "method": "BM25",
+      "R@1": 0.7012987012987013,
+      "R@3": 0.8441558441558441,
+      "R@1_subtree": 0.7012987012987013
+    },
+    {
+      "method": "dense (bge-base)",
+      "R@1": 0.7792207792207793,
+      "R@3": 0.8571428571428571,
+      "R@1_subtree": 0.8181818181818182
+    },
+    {
+      "method": "hybrid (RRF)",
+      "R@1": 0.7662337662337663,
+      "R@3": 0.8961038961038961,
+      "R@1_subtree": 0.7792207792207793
+    },
+    {
+      "method": "v2 final (hybrid + reranker)",
+      "R@1": 0.8311688311688312,
+      "R@3": 0.9090909090909091,
+      "R@1_subtree": 0.8441558441558441
+    },
+    {
+      "method": "STAIR ToC router (groq/openai/gpt-oss-20b, zero-shot)",
+      "R@1": 0.5974025974025974,
+      "R@3": 0.7142857142857143,
+      "R@1_subtree": 0.6363636363636364
+    }
+  ],
+  "chunks": [
+    {
+      "config": "v2 (no ToC routing)",
+      "hit@1": 0.7662337662337663,
+      "hit@3": 0.8831168831168831,
+      "hit@5": 0.8961038961038961,
+      "mrr": 0.8265821480107196,
+      "recall@4": 0.8896103896103896,
+      "p50_ms": 242.29079199722037
+    },
+    {
+      "config": "v2 + STAIR, fusion=candidates",
+      "hit@1": 0.7662337662337663,
+      "hit@3": 0.8831168831168831,
+      "hit@5": 0.8961038961038961,
+      "mrr": 0.8289115646258505,
+      "recall@4": 0.8896103896103896,
+      "p50_ms": 251.41004200122552
+    },
+    {
+      "config": "v2 + STAIR, fusion=final",
+      "hit@1": 0.6103896103896104,
+      "hit@3": 0.8571428571428571,
+      "hit@5": 0.8961038961038961,
+      "mrr": 0.7327355184498043,
+      "recall@4": 0.8766233766233766,
+      "p50_ms": 245.0444170026458
+    },
+    {
+      "config": "v2 + STAIR, fusion=restrict",
+      "hit@1": 0.6103896103896104,
+      "hit@3": 0.7142857142857143,
+      "hit@5": 0.7142857142857143,
+      "mrr": 0.6663574520717378,
+      "recall@4": 0.7142857142857143,
+      "p50_ms": 97.5567499990575
+    }
+  ],
+  "routes": {
+    "a001": [
+      "FILING A REPORT",
+      "THE ROLE OF THE OFFICE OF STUDENT CONDUCT AND CONFLICT RESOLUTION"
+    ],
+    "a003": [
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION"
+    ],
+    "a004": [
+      "HEARING ADVISORS",
+      "The Hearing"
+    ],
+    "a005": [
+      "Sanctions",
+      "The Decision Letter",
+      "The Hearing"
+    ],
+    "a006": [],
+    "a007": [
+      "ACADEMIC INTEGRITY"
+    ],
+    "a008": [
+      "AIDING AND ABETTING"
+    ],
+    "a009": [
+      "BREAKING AND ENTERING"
+    ],
+    "a011": [
+      "DANGEROUS WEAPONS"
+    ],
+    "a012": [
+      "DISRUPTIVE GATHERINGS"
+    ],
+    "a013": [
+      "DOXING"
+    ],
+    "a015": [
+      "Sanctions",
+      "Maintenance of Student Conduct Records",
+      "Procedures for Student Appeals"
+    ],
+    "a017": [
+      "FIRE SAFETY"
+    ],
+    "a023": [
+      "UNIVERSITY GUEST POLICY"
+    ],
+    "a026": [
+      "Code of Student Conduct"
+    ],
+    "a027": [
+      "Applicability of the Code On and Off Campus/Jurisdiction of the Code",
+      "Code of Student Conduct"
+    ],
+    "a028": [
+      "Applicability of the Code On and Off Campus/Jurisdiction of the Code"
+    ],
+    "a031": [
+      "Applicability of the Code On and Off Campus/Jurisdiction of the Code",
+      "STUDENT EXPECTATIONS",
+      "General Expectations"
+    ],
+    "a032": [
+      "VIOLATION OF LAW",
+      "VIOLATION OF UNIVERSITY POLICIES",
+      "Sanctions"
+    ],
+    "a033": [
+      "DISRUPTIVE GATHERINGS"
+    ],
+    "a035": [
+      "The Hearing",
+      "Notification",
+      "Failure to Appear"
+    ],
+    "a037": [
+      "THE ROLE OF THE OFFICE OF STUDENT CONDUCT AND CONFLICT RESOLUTION",
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION",
+      "HEARING ADVISORS"
+    ],
+    "a039": [
+      "The Decision Letter",
+      "The Decision Letter"
+    ],
+    "a040": [
+      "Procedures for Student Appeals"
+    ],
+    "a041": [
+      "Failure to Appear"
+    ],
+    "a043": [
+      "Presentation of Information"
+    ],
+    "a047": [
+      "FILING A REPORT",
+      "THE ROLE OF THE OFFICE OF STUDENT CONDUCT AND CONFLICT RESOLUTION",
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION"
+    ],
+    "a048": [
+      "FILING A REPORT",
+      "HARASSMENT",
+      "BIAS-RELATED INCIDENTS"
+    ],
+    "a049": [
+      "FILING A REPORT",
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION"
+    ],
+    "a052": [
+      "Applicability of the Code On and Off Campus/Jurisdiction of the Code",
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION",
+      "DESCRIPTION OF ADMINISTRATIVE HEARINGS"
+    ],
+    "a054": [
+      "The Hearing"
+    ],
+    "a055": [],
+    "a056": [
+      "Interpretation and Application"
+    ],
+    "a058": [
+      "HEARING ADVISORS"
+    ],
+    "a060": [
+      "HEARING ADVISORS",
+      "The Hearing",
+      "Notification"
+    ],
+    "a064": [
+      "Parent/Guardian Notification"
+    ],
+    "a071": [
+      "The Hearing",
+      "Failure to Appear",
+      "Presentation of Information"
+    ],
+    "a073": [
+      "HEARING ADVISORS",
+      "Presentation of Information"
+    ],
+    "a074": [
+      "The PreHearing",
+      "Presentation of Information",
+      "The Decision Letter"
+    ],
+    "a077": [
+      "Procedures for Student Appeals"
+    ],
+    "a078": [
+      "Sanctions",
+      "Procedures for Student Appeals"
+    ],
+    "a081": [
+      "Alcohol",
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL"
+    ],
+    "a082": [
+      "Standards of Conduct",
+      "Sanctions",
+      "Code of Student Conduct"
+    ],
+    "a083": [
+      "ALCOHOL, MARIJUANA, OTHER DRUGS, AND MEDICAL AMNESTY",
+      "Alcohol",
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL"
+    ],
+    "a084": [
+      "Alcohol"
+    ],
+    "a087": [
+      "Drugs",
+      "Medical Amnesty"
+    ],
+    "a089": [
+      "ALCOHOL, MARIJUANA, OTHER DRUGS, AND MEDICAL AMNESTY",
+      "Alcohol",
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL"
+    ],
+    "a090": [
+      "Medical Amnesty"
+    ],
+    "a092": [
+      "BIAS-RELATED INCIDENTS"
+    ],
+    "a093": [
+      "HARASSMENT",
+      "BULLYING",
+      "BIAS-RELATED INCIDENTS"
+    ],
+    "a094": [
+      "DOXING",
+      "HARASSMENT"
+    ],
+    "a097": [
+      "ALCOHOL, MARIJUANA, OTHER DRUGS, AND MEDICAL AMNESTY",
+      "Alcohol",
+      "EXCESSIVE CONSUMPTION"
+    ],
+    "a098": [
+      "Applicability of the Code On and Off Campus/Jurisdiction of the Code",
+      "General Expectations"
+    ],
+    "a102": [
+      "UNAUTHORIZED USE/POSSESSION OF OTHER\u2019S PROPERTY"
+    ],
+    "a103": [
+      "VIOLATION OF UNIVERSITY POLICIES"
+    ],
+    "a108": [
+      "MISREPRESENTATION OF INFORMATION"
+    ],
+    "a110": [
+      "NOISE"
+    ],
+    "a111": [
+      "PHYSICAL ABUSE",
+      "DISORDERLY CONDUCT",
+      "RETALIATION"
+    ],
+    "a112": [
+      "RETALIATION",
+      "HARASSMENT",
+      "Sanctions"
+    ],
+    "a113": [
+      "SMOKING"
+    ],
+    "a116": [
+      "VANDALISM"
+    ],
+    "a122": [
+      "Sanctions",
+      "Maintenance of Student Conduct Records"
+    ],
+    "a124": [
+      "Maintenance of Student Conduct Records",
+      "Sanctions"
+    ],
+    "a125": [
+      "Sanctions",
+      "ACADEMIC INTEGRITY",
+      "VIOLATION OF PROFESSIONAL CONDUCT IN DEGREE PROGRAM"
+    ],
+    "a129": [
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL",
+      "Alcohol"
+    ],
+    "a131": [
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL"
+    ],
+    "a132": [
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL",
+      "Alcohol"
+    ],
+    "a134": [
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF OTHER DRUGS"
+    ],
+    "a135": [
+      "Parent/Guardian Notification",
+      "SANCTION GUIDELINES FOR POSSESSION/CONSUMPTION OF ALCOHOL",
+      "Alcohol"
+    ],
+    "a140": [
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION",
+      "HEARING ADVISORS",
+      "Failure to Appear"
+    ],
+    "a142": [
+      "Maintenance of Student Conduct Records"
+    ],
+    "a146": [
+      "Applicability of the Code On and Off Campus/Jurisdiction of the Code",
+      "STUDENT EXPECTATIONS"
+    ],
+    "a147": [
+      "DESCRIPTION OF ADMINISTRATIVE HEARINGS",
+      "DESCRIPTION OF STUDENT CONDUCT BOARD HEARINGS"
+    ],
+    "a149": [
+      "HEARING ADVISORS",
+      "The PreHearing"
+    ],
+    "a151": [
+      "FAILURE TO PRODUCE NORTHEASTERN STUDENT IDENTIFICATION",
+      "MISREPRESENTATION OF INFORMATION",
+      "UNAUTHORIZED USE OF UNIVERSITY IDENTIFICATION MARKS"
+    ],
+    "a152": [
+      "Maintenance of Student Conduct Records",
+      "Sanctions",
+      "Interpretation and Application"
+    ],
+    "a154": [
+      "BULLYING",
+      "HARASSMENT"
+    ],
+    "o001": [],
+    "o003": [
+      "General Expectations"
+    ],
+    "o006": [
+      "THE ROLE OF THE OFFICE OF STUDENT CONDUCT AND CONFLICT RESOLUTION"
+    ],
+    "o009": [],
+    "o010": [
+      "General Expectations",
+      "ACADEMIC INTEGRITY"
+    ],
+    "o011": [],
+    "o013": [
+      "FILING A REPORT",
+      "REVIEWING THE REPORT AND DETERMINING HEARING TYPE OR OTHER ACTION",
+      "Notification"
+    ],
+    "o016": [],
+    "o019": [],
+    "o021": [],
+    "o022": [
+      "VIOLATION OF GUIDE TO RESIDENCE HALL LIVING",
+      "UNIVERSITY GUEST POLICY"
+    ],
+    "o024": [],
+    "o028": [],
+    "o029": [
+      "General Expectations",
+      "ACADEMIC INTEGRITY"
+    ],
+    "o030": []
+  }
+}
