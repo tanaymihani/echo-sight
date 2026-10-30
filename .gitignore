@@ -6,8 +6,11 @@ __pycache__/
 # Environment variables
 .env
 
-# Vector DB
-chroma_db/
-
 # OS
 .DS_Store
+
+# Search index (rebuilt from the PDF)
+index/
+
+# Eval run logs (results JSON/JSONL are kept)
+eval/results/**/*.log

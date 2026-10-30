@@ -1,0 +1,20 @@
+# Core pipeline
+pymupdf>=1.24
+chromadb>=1.0
+sentence-transformers>=5.0
+torch>=2.4
+rank-bm25>=0.2.2
+snowballstemmer>=2.2
+openai>=1.60
+python-dotenv>=1.0
+
+# Voice
+pyttsx3>=2.90            # speech fallback where macOS `say` is unavailable
+faster-whisper>=1.1      # push-to-talk speech recognition (--voice)
+sounddevice>=0.5
+
+# Evaluation and tests (pypdf + langchain-text-splitters reproduce the v1 baseline)
+numpy>=1.26
+pypdf>=5.0
+langchain-text-splitters>=0.3
+pytest>=8
